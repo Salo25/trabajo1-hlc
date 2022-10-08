@@ -1,0 +1,7 @@
+{
+  "name": "trabajo1-hlc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
