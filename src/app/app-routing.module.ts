@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AsigTareaPage } from './home/pages/asig-tarea/asig-tarea.page';
+import { GestPersoPage } from './home/pages/gest-perso/gest-perso.page';
+import { GestTareasPage } from './home/pages/gest-tareas/gest-tareas.page';
+import { VerTareaPage } from './home/pages/ver-tarea/ver-tarea.page';
 
 const routes: Routes = [
   {
@@ -12,20 +16,20 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'gest-perso',
-    loadChildren: () => import('./home/pages/gest-perso/gest-perso.module').then( m => m.GestPersoPageModule)
+    path: 'gestPerso', component: GestPersoPage
+    //loadChildren: () => import('./pages/gest-perso/gest-perso.page').then( m => m.GestPersoPage)
   },
   {
-    path: 'gest-tareas',
-    loadChildren: () => import('./home/pages/gest-tareas/gest-tareas.module').then( m => m.GestTareasPageModule)
+    path: 'gestTareas',
+    component: GestTareasPage
   },
   {
     path: 'asig-tarea',
-    loadChildren: () => import('./home/pages/asig-tarea/asig-tarea.module').then( m => m.AsigTareaPageModule)
+    component: AsigTareaPage
   },
   {
     path: 'ver-tarea',
-    loadChildren: () => import('./home/pages/ver-tarea/ver-tarea.module').then( m => m.VerTareaPageModule)
+    component: VerTareaPage
   },
 ];
 

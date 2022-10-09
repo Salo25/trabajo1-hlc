@@ -71,10 +71,17 @@
   <ion-content class="ion-padding">
     This is the menu content.
     <ion-list>
-      <ion-item><ion-button>Tareas</ion-button></ion-item>
-      <ion-item><ion-button>Gestionar Personas</ion-button></ion-item>
-      <ion-item><ion-button>Asignar Tareas</ion-button></ion-item>
-      <ion-item><ion-button>Ver Tareas</ion-button></ion-item>
+      <ion-item>
+        <!--
+        <ion-nav [root]="['/gest-perso']">
+          <button>Gestionar personas</button>
+        </ion-nav>
+        -->
+        <ion-button (click)="navigate('gestPerso')">Gestionar personas</ion-button>
+      </ion-item>
+      <ion-item><ion-button (click)="navigate('gestTareas')">Gestionar tareas</ion-button></ion-item>
+      <ion-item><ion-button (click)="navigate('asig-tarea')">Asignar tarea</ion-button></ion-item>
+      <ion-item><ion-button (click)="navigate('ver-tarea')">Ver tareas</ion-button></ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
