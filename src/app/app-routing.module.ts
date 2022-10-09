@@ -13,19 +13,19 @@ const routes: Routes = [
   },
   {
     path: 'gest-perso',
-    loadChildren: () => import('./gest-perso/gest-perso.module').then( m => m.GestPersoPageModule)
+    loadChildren: () => import('./home/pages/gest-perso/gest-perso.module').then( m => m.GestPersoPageModule)
   },
   {
     path: 'gest-tareas',
-    loadChildren: () => import('./gest-tareas/gest-tareas.module').then( m => m.GestTareasPageModule)
+    loadChildren: () => import('./home/pages/gest-tareas/gest-tareas.module').then( m => m.GestTareasPageModule)
   },
   {
     path: 'asig-tarea',
-    loadChildren: () => import('./asig-tarea/asig-tarea.module').then( m => m.AsigTareaPageModule)
+    loadChildren: () => import('./home/pages/asig-tarea/asig-tarea.module').then( m => m.AsigTareaPageModule)
   },
   {
     path: 'ver-tarea',
-    loadChildren: () => import('./ver-tarea/ver-tarea.module').then( m => m.VerTareaPageModule)
+    loadChildren: () => import('./home/pages/ver-tarea/ver-tarea.module').then( m => m.VerTareaPageModule)
   },
 ];
 
