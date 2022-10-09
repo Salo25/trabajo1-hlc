@@ -11,6 +11,22 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'gest-perso',
+    loadChildren: () => import('./gest-perso/gest-perso.module').then( m => m.GestPersoPageModule)
+  },
+  {
+    path: 'gest-tareas',
+    loadChildren: () => import('./gest-tareas/gest-tareas.module').then( m => m.GestTareasPageModule)
+  },
+  {
+    path: 'asig-tarea',
+    loadChildren: () => import('./asig-tarea/asig-tarea.module').then( m => m.AsigTareaPageModule)
+  },
+  {
+    path: 'ver-tarea',
+    loadChildren: () => import('./ver-tarea/ver-tarea.module').then( m => m.VerTareaPageModule)
+  },
 ];
 
 @NgModule({
