@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { GestPersoPageRoutingModule } from './gest-perso-routing.module';
 
 import { GestPersoPage } from './gest-perso.page';
+import { PerosnaComponent } from './perosna/perosna.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { GestPersoPage } from './gest-perso.page';
     IonicModule,
     GestPersoPageRoutingModule
   ],
-  declarations: [GestPersoPage]
+  declarations: [GestPersoPage, PerosnaComponent]
 })
 export class GestPersoPageModule {}
