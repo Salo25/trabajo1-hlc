@@ -1,3 +1,4 @@
+<!--
 <ion-card>
     <ion-img 
         src="https://drive.google.com/uc?export=view&id=1AbVuYe0VdVX3xMLEj7du9XQ0O6HJru2u"
@@ -18,3 +19,14 @@
         </ion-label>
     </ion-card-content>
 </ion-card>
+-->
+<!--https://drive.google.com/uc?export=view&id=1AbVuYe0VdVX3xMLEj7du9XQ0O6HJru2u-->
+<ion-item detail="true">
+    <ion-avatar slot="start">
+        <ion-img
+            src="{{person.profilePic}}"
+            alt="Una foto de la persona">
+        </ion-img>
+    </ion-avatar>
+    <ion-text style="text-align: center;">{{person.personName.subname}}, &#32; {{person.personName.name}}</ion-text>
+</ion-item>

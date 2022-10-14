@@ -6,6 +6,7 @@
 </ion-header>
 
 <ion-content>
+  <!--
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -19,4 +20,27 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  -->
+ <!--
+  <ion-grid>
+  <ion-row *ngFor="let person of [].constructor( countRows() ); let i=index" class="threePeopleGrid">
+    <ion-col *ngFor="let grid of [].constructor(3)">
+      <app-perosna *ngIf=""></app-perosna>
+    </ion-col>
+  </ion-row>
+ </ion-grid>
+-->
+
+<ion-list>
+  <app-perosna *ngFor="let i of peopleList" [person]="i"></app-perosna>
+</ion-list>
+
+ <!--
+  <app-perosna></app-perosna>
+  <app-perosna></app-perosna>
+  <app-perosna></app-perosna>
+  <app-perosna></app-perosna>
+  <app-perosna></app-perosna>
+  <app-perosna></app-perosna>
+ -->
 </ion-content>
