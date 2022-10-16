@@ -30,10 +30,16 @@
   </ion-row>
  </ion-grid>
 -->
-
+<!--
 <ion-list>
-  <app-perosna *ngFor="let i of peopleList" [person]="i"></app-perosna>
+  <ion-item *ngFor="let i of peopleList.getPeople">
+    <app-perosna [person]="i"></app-perosna>
+  </ion-item>
 </ion-list>
+-->
+  <ion-list>
+      <app-perosna [person]="i" *ngFor="let i of peopleList.getPeople"></app-perosna>
+  </ion-list>
 
  <!--
   <app-perosna></app-perosna>

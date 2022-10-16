@@ -21,7 +21,98 @@
 </ion-card>
 -->
 <!--https://drive.google.com/uc?export=view&id=1AbVuYe0VdVX3xMLEj7du9XQ0O6HJru2u-->
-<ion-item detail="true">
+
+<!--
+<ion-item [class]="_appPersonClass" detail="true" button="true" (click)="deployPerson()">
+            <ion-avatar slot="start">
+                <ion-img
+                    src="{{person.profilePic}}"
+                    alt="Una foto de la persona">
+                </ion-img>
+            </ion-avatar>
+            <ion-text style="text-align: center;">{{person.personName.subname}}, &#32; {{person.personName.name}}</ion-text>
+            <ion-label [style]="_myStyle">
+                <ion-button>Editar</ion-button>
+                <ion-button color="danger">Borrar</ion-button>
+            </ion-label>
+
+</ion-item>
+-->
+<!--
+<ion-list>
+    <ion-item 
+        detail="true" 
+        button="true" 
+        *ngFor="let i of peopleList.getPeople">
+        <ion-list lines="none">
+            <ion-item>
+                <ion-avatar slot="start">
+                    <ion-img
+                        src="{{i.profilePic}}"
+                        alt="Una foto de la persona">
+                    </ion-img>
+                </ion-avatar>
+                <ion-text style="text-align: center;">{{i.personName.subname}}, &#32; {{i.personName.name}}</ion-text>
+            </ion-item>
+            <ion-item [style]="_myStyle">
+                <ion-label>
+                    <ion-button>Editar</ion-button>
+                    <ion-button color="danger">Borrar</ion-button>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-item>
+</ion-list>
+-->
+<!--
+<ion-accordion-group>
+<ion-accordion *ngFor="let i of peopleList.getPeople">
+        <ion-item>
+                <ion-avatar slot="start">
+                    <ion-img src="{{i.profilePic}}" alt="Una foto de la persona">
+                    </ion-img>
+                </ion-avatar>
+                <ion-text style="text-align: center;">{{i.personName.subname}}, &#32; {{i.personName.name}}</ion-text>
+            </ion-item>
+                <div slot="content">
+                <ion-label>
+                    <ion-button>Editar</ion-button>
+                    <ion-button color="danger">Borrar</ion-button>
+                </ion-label>
+                </div>
+</ion-accordion>
+</ion-accordion-group>
+-->
+<!---->
+<ion-item 
+        detail="true" 
+        button="true"
+        (click)="deployPersonEvent3()">
+        <ion-list lines="none">
+            <ion-item>
+                <ion-avatar slot="start">
+                    <ion-img
+                        src="{{person.profilePic}}"
+                        alt="Una foto de la persona">
+                    </ion-img>
+                </ion-avatar>
+                <ion-text style="text-align: center;">{{person.personName.subname}}, &#32; {{person.personName.name}}</ion-text>
+            </ion-item>
+            <ion-item [style]="_myStyle">
+                <ion-label>
+                    <ion-button>Editar</ion-button>
+                    <ion-button color="danger">Borrar</ion-button>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+</ion-item>
+
+<!--
+<ion-list>
+<ion-item 
+    detail="true" 
+    button="true"
+    (click)="deployPersonEvent3()">
     <ion-avatar slot="start">
         <ion-img
             src="{{person.profilePic}}"
@@ -29,4 +120,33 @@
         </ion-img>
     </ion-avatar>
     <ion-text style="text-align: center;">{{person.personName.subname}}, &#32; {{person.personName.name}}</ion-text>
+    <ion-label [style]="_myStyle">
+        <ion-button>Editar</ion-button>
+        <ion-button color="danger">Borrar</ion-button>
+    </ion-label>
 </ion-item>
+-->
+    <!--
+    <ion-label class="aditionalSettings" [style]="_myStyle">
+        <ion-button>Editar</ion-button>
+        <ion-button color="danger">Borrar</ion-button>
+    </ion-label>
+    -->
+
+<!--
+<ion-content [style]="_myStyle">
+    <ion-button>Editar</ion-button>
+    <ion-button color="danger">Borrar</ion-button>
+</ion-content>
+-->
+<!--
+<div id="desplegable">
+    <select name="salomon" id="salomoncito">
+        <option value="rojo" id="rojo">
+            <button>Rojo</button>
+        </option>
+        <option value="azul" id="azul">Azul</option>
+        <option value="verde" id="verde">Verde</option>
+    </select>
+</div>
+-->

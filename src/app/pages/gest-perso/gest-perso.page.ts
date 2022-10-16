@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
-import { FullName, Person } from './perosna/perosna.component';
+//import { FullName, Person } from './perosna/perosna.component';
+import { PeopleManagmentService, Person } from 'src/app/api/people-managment/people-managment.service';
+import { PerosnaComponent } from './perosna/perosna.component';
 
 /*
 export type FullName = {
@@ -28,18 +30,21 @@ export interface Person {
   styleUrls: ['./gest-perso.page.scss'],
 })
 export class GestPersoPage implements OnInit {
-  protected peopleList: Person[];
+  //protected peopleList: Person[];
+  protected peopleList: PeopleManagmentService;
   private atras: Location;
+  expanded:  boolean = false;
 
 
-  constructor(atras: Location) { this.atras = atras;}
+  constructor(_atras: Location, peopleMng: PeopleManagmentService) { this.atras = _atras; this.peopleList = peopleMng; }
 
 
   irAtras() {
     this.atras.back();
   }
   ngOnInit() {
-    this.peopleList =
+    const DEFAULT_AVATAR_PATH = '/../assets/default_avatar.svg';
+    this.peopleList.setPeople =
       Array<Person>(
         {
           id: 1,
@@ -74,7 +79,7 @@ export class GestPersoPage implements OnInit {
         {
           id: 4,
           personName: { name: 'Pepe', subname: 'Strauss López' },
-          profilePic: '',
+          profilePic: DEFAULT_AVATAR_PATH,
           email: 'josegoldengatebridge@yahoo.com',
           age: 51,
           job: 'Civil Engineer',
@@ -84,7 +89,7 @@ export class GestPersoPage implements OnInit {
         {
           id: 5,
           personName: { name: 'Pepe', subname: 'Strauss López' },
-          profilePic: '',
+          profilePic: DEFAULT_AVATAR_PATH,
           email: 'josegoldengatebridge@yahoo.com',
           age: 51,
           job: 'Civil Engineer',
@@ -94,7 +99,7 @@ export class GestPersoPage implements OnInit {
         {
           id: 6,
           personName: { name: 'Pepe', subname: 'Strauss López' },
-          profilePic: '',
+          profilePic: DEFAULT_AVATAR_PATH,
           email: 'josegoldengatebridge@yahoo.com',
           age: 51,
           job: 'Civil Engineer',
@@ -104,7 +109,7 @@ export class GestPersoPage implements OnInit {
         {
           id: 7,
           personName: { name: 'Pepe', subname: 'Strauss López' },
-          profilePic: '',
+          profilePic: DEFAULT_AVATAR_PATH,
           email: 'josegoldengatebridge@yahoo.com',
           age: 51,
           job: 'Civil Engineer',
@@ -114,8 +119,13 @@ export class GestPersoPage implements OnInit {
     );
   }
 
+  expandSelect(): void {
+    //this.expanded = !this.expanded;
+    //this.personComponent.deployPersonEvent3();
+  }
+/*
   countRows(): number {
     return Math.ceil( this.peopleList.length / 3 );
   }
-
+  */
 }
