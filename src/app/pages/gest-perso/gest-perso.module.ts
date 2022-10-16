@@ -8,6 +8,7 @@ import { GestPersoPageRoutingModule } from './gest-perso-routing.module';
 
 import { GestPersoPage } from './gest-perso.page';
 import { PerosnaComponent } from './perosna/perosna.component';
+import { PersonModalComponent } from './person-modal/person-modal.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { PerosnaComponent } from './perosna/perosna.component';
     IonicModule,
     GestPersoPageRoutingModule
   ],
-  declarations: [GestPersoPage, PerosnaComponent]
+  declarations: [GestPersoPage, PerosnaComponent, PersonModalComponent]
 })
 export class GestPersoPageModule {}

@@ -1,8 +1,6 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
-//import { FullName, Person } from './perosna/perosna.component';
 import { PeopleManagmentService, Person } from 'src/app/api/people-managment/people-managment.service';
-import { PerosnaComponent } from './perosna/perosna.component';
 
 /*
 export type FullName = {
@@ -123,6 +121,7 @@ export class GestPersoPage implements OnInit {
     //this.expanded = !this.expanded;
     //this.personComponent.deployPersonEvent3();
   }
+
 /*
   countRows(): number {
     return Math.ceil( this.peopleList.length / 3 );

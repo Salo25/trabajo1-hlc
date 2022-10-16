@@ -1,0 +1,50 @@
+<ion-modal trigger="open-modal" (willDismiss)="dissmisEvent($event)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()">Cancelar</ion-button>
+        </ion-buttons>
+        <ion-title>Añadir persona</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content class="ion-padding">
+      <ion-item>
+        <ion-label position="floating">Nombre:</ion-label>
+        <ion-input type="text" [(ngModel)]="setPerson.personName.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellidos:</ion-label>
+        <ion-input type="text" [(ngModel)]="setPerson.personName.subname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Foto de perfil:</ion-label>
+        <ion-input type="text" placeholder="URL" [(ngModel)]="setPerson.profilePic"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email:</ion-label>
+        <ion-input type="text" placeholder="email@gmail.com" [(ngModel)]="setPerson.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Edad:</ion-label>
+        <ion-input type="number" [(ngModel)]="setPerson.age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Oficio:</ion-label>
+        <ion-input type="text" placeholder="Tu Trabajo" [(ngModel)]="setPerson.job"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Experiencia laboral:</ion-label>
+        <ion-input type="number" [(ngModel)]="setPerson.workExp"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Biografía:</ion-label>
+        <ion-textarea [autoGrow]="true" placeholder="Escriba alguna cosa sobre tí."></ion-textarea>
+      </ion-item>
+    </ion-content>
+  </ng-template>
+</ion-modal>

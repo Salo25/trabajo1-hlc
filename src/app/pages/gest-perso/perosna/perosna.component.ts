@@ -1,26 +1,8 @@
 import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Person } from 'src/app/api/people-managment/people-managment.service';
+import { GestPersoPageRoutingModule } from '../gest-perso-routing.module';
 
-/*
-export type FullName = {
-  name: string;
-  subname: string;
-};
-export type PhoneNum = {
-  countryID: number;
-  phone: number;
-};
-export interface Person {
-  id: number;
-  personName: FullName;
-  profilePic: string;
-  email: string;
-  age: number;
-  job?: string;
-  workExp: number;
-  description?: string;
-}
-*/
+
 @Component({
   selector: 'app-perosna',
   templateUrl: './perosna.component.html',
@@ -152,12 +134,3 @@ export class PerosnaComponent implements OnInit, OnChanges {
   }
 
 }
-
-/*
-@Injectable()
-export class PersonService {
-  private expand999 = new Subject();
-
-  expand999
-}
-*/

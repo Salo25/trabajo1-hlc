@@ -88,8 +88,6 @@
         detail="true" 
         button="true"
         (click)="deployPersonEvent3()">
-        <ion-list lines="none">
-            <ion-item>
                 <ion-avatar slot="start">
                     <ion-img
                         src="{{person.profilePic}}"
@@ -97,14 +95,10 @@
                     </ion-img>
                 </ion-avatar>
                 <ion-text style="text-align: center;">{{person.personName.subname}}, &#32; {{person.personName.name}}</ion-text>
-            </ion-item>
-            <ion-item [style]="_myStyle">
-                <ion-label>
-                    <ion-button>Editar</ion-button>
+                <ion-label slot="end">
+                    <ion-button [routerLinkActive]="['../person-modal']">Editar</ion-button>
                     <ion-button color="danger">Borrar</ion-button>
                 </ion-label>
-            </ion-item>
-        </ion-list>
 </ion-item>
 
 <!--
