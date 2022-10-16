@@ -40,7 +40,7 @@
   <ion-list>
       <app-perosna [person]="i" *ngFor="let i of peopleList.getPeople"></app-perosna>
   </ion-list>
-  <ion-button >Ir</ion-button>
+  <ion-button [routerLinkActive]="['./person-modal']">Ir</ion-button>
 
  <!--
   <app-perosna></app-perosna>
