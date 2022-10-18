@@ -37,10 +37,167 @@
   </ion-item>
 </ion-list>
 -->
+
   <ion-list>
       <app-perosna [person]="i" *ngFor="let i of peopleList.getPeople"></app-perosna>
   </ion-list>
-  <ion-button [routerLinkActive]="['./person-modal']">Ir</ion-button>
+  <ion-button id="open-modal">Ir</ion-button>
+
+  <!--
+  <ion-modal trigger="open-modal" (willDismiss)="dissmisEvent($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancelar</ion-button>
+          </ion-buttons>
+          <ion-title>Añadir persona</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content class="ion-padding">
+
+        <ion-item>
+          <ion-label position="floating">*Nombre:</ion-label>
+          <ion-input type="text" required [(ngModel)]="form"></ion-input>
+          <ion-note slot="error">Campo nombre requerido</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">*Apellidos:</ion-label>
+          <ion-input type="text" required [(ngModel)]="temPerson.personName[1]"></ion-input>
+          <ion-note slot="error">Campo apellidos requerido</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Foto de perfil:</ion-label>
+          <ion-input type="text" placeholder="URL" [(ngModel)]="temPerson.profilePic"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">*Email:</ion-label>
+          <ion-input 
+            type="email" 
+            required 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="email@gmail.com"
+            [(ngModel)]="temPerson.email">
+          </ion-input>
+          <ion-note slot="error">Email inválido o vacío</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">*Edad:</ion-label>
+          <ion-input 
+            type="number" 
+            required 
+            min="0" 
+            value="0"
+            [(ngModel)]="temPerson.age">
+          </ion-input>
+          <ion-note slot="error">Edad inválida</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Oficio:</ion-label>
+          <ion-input type="text" placeholder="Tu Trabajo" [(ngModel)]="temPerson.job"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">*Experiencia laboral:</ion-label>
+          <ion-input 
+            type="number" 
+            required
+            value="0"
+            min="0"
+            [(ngModel)]="temPerson.workExp">
+          </ion-input>
+          <ion-note slot="error">Número inválido</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Biografía:</ion-label>
+          <ion-textarea [autoGrow]="true" placeholder="Escriba alguna cosa sobre tí." [(ngModel)]="temPerson.biography"></ion-textarea>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  -->
+
+  
+  <ion-modal trigger="open-modal" (willDismiss)="dissmisEvent($event)" [formGroup]="form">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancelar</ion-button>
+          </ion-buttons>
+          <ion-title>Añadir persona</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content class="ion-padding">
+
+        <ion-item formGroupName="personName">
+          <ion-label position="floating">*Nombre:</ion-label>
+          <ion-input type="text" required formControlName="name"></ion-input>
+          <ion-note slot="error">Campo nombre requerido</ion-note>
+        </ion-item>
+        <ion-item formGroupName="personName">
+          <ion-label position="floating">*Apellidos:</ion-label>
+          <ion-input type="text" required formControlName="subname"></ion-input>
+          <ion-note slot="error">Campo apellidos requerido</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Foto de perfil:</ion-label>
+          <ion-input type="text" placeholder="URL" formControlName="profilePic"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">*Email:</ion-label>
+          <ion-input 
+            type="email" 
+            required 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="email@gmail.com" 
+            formControlName="email"></ion-input>
+          <ion-note slot="error">Email inválido o vacío</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">*Edad:</ion-label>
+          <ion-input 
+            type="number" 
+            required 
+            min="0" 
+            value="0" 
+            formControlName="age">
+          </ion-input>
+          <ion-note slot="error">Edad inválida</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Oficio:</ion-label>
+          <ion-input type="text" placeholder="Tu Trabajo" formControlName="job"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">*Experiencia laboral:</ion-label>
+          <ion-input 
+            type="number" 
+            required
+            value="0"
+            min="0"
+            formControlName="workExp">
+          </ion-input>
+          <ion-note slot="error">Número inválido</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Biografía:</ion-label>
+          <ion-textarea [autoGrow]="true" placeholder="Escriba alguna cosa sobre tí." formControlName="biography"></ion-textarea>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 
  <!--
   <app-perosna></app-perosna>

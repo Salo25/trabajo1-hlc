@@ -11,12 +11,12 @@ export type PhoneNum = {
 export interface Person {
   id: number;
   personName: FullName;
-  profilePic: string;
+  profilePic?: string;
   email: string;
   age: number;
   job?: string;
   workExp: number;
-  description?: string;
+  biography?: string;
 }
 
 @Injectable({

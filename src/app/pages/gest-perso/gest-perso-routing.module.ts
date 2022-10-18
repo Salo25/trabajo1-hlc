@@ -8,10 +8,6 @@ const routes: Routes = [
   {
     path: '',
     component: GestPersoPage
-  },
-  {
-    path: 'person-modal',
-    loadChildren: () => import('./person-modal/person-modal.component').then( m => m.PersonModalComponent)
   }
 ];
 
